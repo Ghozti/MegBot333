@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "megdatabase",
+  "private_key_id": "c95a4579074218652815910773c74426dade7363",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDk2qO4lJJIFM4e\n62V09ViP+bZ9O1Qdmd2LRrXPmko0NfrNZFAGgp5Ltc1bgNwJaDD7UTnfbTQ5QJ2I\nppcsVav/lewapzhZTdTJNglpTX4rrdBeVM8jEm4cMjo2MFyfp3KHefvBwYsZg8eE\nBzIYAj2wnZSk6neK3IxODsNpasF1PcACnRtlpm1O0AFLDXaveo7OjYKqDFypaYQL\n60UtGEiqWzegVyeDDIJiExO6WsIPen+8xprwINiHjCy5rJLKzyoN+1pPi2WqwmPv\nKzQAkXWjQOG9Y55zCVNBBz3SdMsTg76mfdr7AKM9OJyfxHHGB13e0+YNpxueSikj\nrk1H1XP5AgMBAAECggEAR6Cm3X6iyiy41rSWbKTdszJVC50mFp2x2YWoIfIIh47d\nkKt04JTBNrEQNTN/qvIRYpdppaRoVAMFS1/YsOefjb8+xpjP6iOSFefzyiGW+9TL\nArtImZGLJQgTcCJy2wVtszlasqoA/1tfdtNJunn5FO49N+Cqyat9vnCgeL4RDsBN\nbOcuiPsLad41BU4qSV6OzC3fU/IlLmUVBwmCzSR11RT/H5bIlFQX6hjuDO/CZfFo\n/V6JT3CuBJN4zjMCkiE6pD0+fa2PhgCW/MTzg5GHcPH23gn/sVGwjbioWv2azRC2\nQEh8mvZvWSYlDyCiqL2e24s02RtonZbCs3aPiF3OgQKBgQD25DyGz3E6AgEJ7tVD\npGD170jNwcE8VXCLWvMTqwt46LGJ/ij4V4umJNEFY9/V9mIU7YnAGybGcIr1qKlD\n0r5WHzkXRGuCt2zq7R/W2hb5SteGy5ecqG+3kuEiX7jJSBGt4Ci2Unb676q0sOu2\nc5Lze4FInaGWvIpML6CsUcIpjwKBgQDtTAxeeCKTFsXLYpHdSH5WcRUJjWrDRETP\nZ4CoPURJpZJDJIDAzbEIMXdFYOQqh3mtuGEdWnGEC826cLc3vbWcWeSS+2YDDkpT\n5iOFx8NvIpP9sLAUOJxhYPRPHzDAkDG5f6imz9abulDS5mN+Gb1oE7imkcP/+h6C\n91UUZO919wKBgQClogMVMhA1KWkG/+qlYZ8G/0wpdcYssuk5JIAU/thIelu5RwC3\ncwwmH2b3JcTiJ1Qv1BhpAA4obRJcspU0AitdXb8QY/94h5QTm5eTrWZiQpqLPQTu\nvXWNg4V0aSFwL+BkdRD7GCHoQWeVp2fLVIgOvxnB3LauiLiDWiSB1qva8wKBgEhT\nYIW+qhMY4sp9zaWbfd5M8zOJJdxER5DLpDwjCFhGHdFXI+MgDnBH22mLAaAw0JZx\nVzBCK80qZ9cGmeFkciEoiPF/rHUL+v2dbIBPBbMu39p36wMOyiMoEO64u/xFNtKq\nJTZKrMekPxQ44mRB5if9ss8aKJoxmvEh/42Kwi27AoGBAKkC+/N8A7feGkDscYyc\nNj3rsvDA9Qa7doZayHbzZvLgGKYT8RPAId3eMOGesC+16Gh/r/k/oh5cjm33YrZa\npYWQMf2YvCgkJiFX/8ywmMg5uT6ysLy53XzJihbY7cvXKiqdIAxBkaFkj4cPBLYO\nHQXuP8VZEXgKaStq/Xo1YD0d\n-----END PRIVATE KEY-----\n",
+  "client_email": "megaccount@megdatabase.iam.gserviceaccount.com",
+  "client_id": "115801638760257972743",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/megaccount%40megdatabase.iam.gserviceaccount.com"
+}
