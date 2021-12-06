@@ -65,8 +65,8 @@ public class DataBaseMainMain {
     public static void main(String... args) throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        final String spreadsheetId = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms";
-        final String range = "Class Data!A2:E";
+        final String spreadsheetId = "1CUg_BmrvoBPPLScAig9HJDqXW1llPziH1k_TmbnMW-c";
+        final String range = "A:F";//change this
         Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();
@@ -77,10 +77,9 @@ public class DataBaseMainMain {
         if (values == null || values.isEmpty()) {
             System.out.println("No data found.");
         } else {
-            System.out.println("Name, Major");
             for (List row : values) {
                 // Print columns A and E, which correspond to indices 0 and 4.
-                System.out.printf("%s, %s\n", row.get(0), row.get(4));
+                System.out.printf("%s, %s, %s, %s, %s, %s", row.get(0), row.get(1), row.get(2), row.get(3), row.get(4), row.get(5));//change this
             }
         }
     }
