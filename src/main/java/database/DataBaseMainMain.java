@@ -62,10 +62,13 @@ public class DataBaseMainMain {
      * Prints the names and majors of students in a sample spreadsheet:
      * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
      */
+
+
+
     public static void main(String... args) throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        final String spreadsheetId = "1CUg_BmrvoBPPLScAig9HJDqXW1llPziH1k_TmbnMW-c";
+        final String spreadsheetId = "1QrAgHIIXrB1dsA-Pqx_UlW6vF_yZsA-URlOqhtG3zvc";
         final String range = "A:F";//change this
         Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
@@ -79,7 +82,7 @@ public class DataBaseMainMain {
         } else {
             for (List row : values) {
                 // Print columns A and E, which correspond to indices 0 and 4.
-                System.out.printf("%s, %s, %s, %s, %s, %s", row.get(0), row.get(1), row.get(2), row.get(3), row.get(4), row.get(5));//change this
+                System.out.printf("%s, %s, %s, %s, %s, %s\n", row.get(0), row.get(1), row.get(2), row.get(3), row.get(4), row.get(5));//change this
             }
         }
     }
