@@ -26,26 +26,25 @@ public class EventNotifier implements MessageCreateListener {
 
                 for (String i : DataBaseMainMain.getSheetData()){
                     data = i.split(",");
-                }
+                    for (String s : data){
+                        if (s.endsWith(" Type")) type = s.substring(0,s.length()-4);
+                        else if (s.endsWith(" Des")) description = s.substring(0,s.length()-3);
+                        else if (s.endsWith(" Date")) date = s.substring(0,s.length()-4);
+                        else if (s.endsWith(" Start")) start = s.substring(0,s.length()-5);
+                        else if (s.endsWith(" End")) end = s.substring(0,s.length()-3);
+                        else if (s.endsWith(" Finished")) finished = s.substring(0,s.length()-8);
+                    }
 
-                for (String i : data){
-                    if (i.endsWith(" Type")) type = i.substring(0,i.length()-4);
-                    else if (i.endsWith(" Des")) description = i.substring(0,i.length()-3);
-                    else if (i.endsWith(" Date")) date = i.substring(0,i.length()-4);
-                    else if (i.endsWith(" Start")) start = i.substring(0,i.length()-5);
-                    else if (i.endsWith(" End")) end = i.substring(0,i.length()-3);
-                    else if (i.endsWith(" Finished")) finished = i.substring(0,i.length()-8);
+                    EmbedBuilder embed = new EmbedBuilder()
+                            .setTitle(type)
+                            .setDescription(description)
+                            .setAuthor("Meg 333")
+                            .addInlineField("Date", date)
+                            .addInlineField("Time Interval: ", start + " - " + end)
+                            .addInlineField("Is done", finished)
+                            .setColor(Color.BLUE);
+                    event.getChannel().sendMessage(embed);
                 }
-
-                EmbedBuilder embed = new EmbedBuilder()
-                        .setTitle(type)
-                        .setDescription(description)
-                        .setAuthor("Meg 333")
-                        .addInlineField("Date", date)
-                        .addInlineField("Time Interval: ", start + " - " + end)
-                        .addInlineField("Is done", finished)
-                        .setColor(Color.BLUE);
-                event.getChannel().sendMessage(embed);
             } catch (IOException | GeneralSecurityException e) {
                 e.printStackTrace();
             }
