@@ -16,19 +16,36 @@ public class EventNotifier implements MessageCreateListener {
     //todo handle formated data
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
+
+        String type = "", description = "", date = "", start = "", end = "", finished = "";
+
         if (event.getMessageContent().equals("!meg -get events".toLowerCase())){
             try {
+
+                String[] data = new String[]{};
+
                 for (String i : DataBaseMainMain.getSheetData()){
-                    EmbedBuilder embed = new EmbedBuilder()
-                            .setTitle("Title")
-                            .setDescription("Description")
-                            .setAuthor("Author Name", "http://google.com/", "https://cdn.discordapp.com/embed/avatars/0.png")
-                            .addField("A field", "Some text inside the field")
-                            .addInlineField("An inline field", "More text")
-                            .addInlineField("Another inline field", "Even more text")
-                            .setColor(Color.BLUE);
-                    event.getChannel().sendMessage(embed);
+                    data = i.split(",");
                 }
+
+                for (String i : data){
+                    if (i.endsWith(" Type")) type = i.substring(0,i.length()-4);
+                    else if (i.endsWith(" Des")) description = i.substring(0,i.length()-3);
+                    else if (i.endsWith(" Date")) date = i.substring(0,i.length()-4);
+                    else if (i.endsWith(" Start")) start = i.substring(0,i.length()-5);
+                    else if (i.endsWith(" End")) end = i.substring(0,i.length()-3);
+                    else if (i.endsWith(" Finished")) finished = i.substring(0,i.length()-8);
+                }
+
+                EmbedBuilder embed = new EmbedBuilder()
+                        .setTitle(type)
+                        .setDescription(description)
+                        .setAuthor("Meg 333")
+                        .addInlineField("Date", date)
+                        .addInlineField("Time Interval: ", start + " - " + end)
+                        .addInlineField("Is done", finished)
+                        .setColor(Color.BLUE);
+                event.getChannel().sendMessage(embed);
             } catch (IOException | GeneralSecurityException e) {
                 e.printStackTrace();
             }

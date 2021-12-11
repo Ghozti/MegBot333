@@ -82,7 +82,7 @@ public class DataBaseMainMain {
         } else {
             for (List row : values) {
                 // Print columns A and E, which correspond to indices 0 and 4.
-                data.add(String.format("%s, %s, %s, %s, %s, %s\n", row.get(0), row.get(1), row.get(2), row.get(3), row.get(4), row.get(5)));//change this
+                data.add(String.format("%s, %s, %s, %s, %s, %s", row.get(0) + " Type", row.get(1) + " Des", row.get(2) + " Date", row.get(3) + " Start", row.get(4) + " End", row.get(5) + " Finished"));//change this
             }
         }
         return data;
@@ -105,7 +105,7 @@ public class DataBaseMainMain {
         } else {
             for (List row : values) {
                 // Print columns A and E, which correspond to indices 0 and 4.
-                System.out.printf("%s, %s, %s, %s, %s, %s\n", row.get(0), row.get(1), row.get(2), row.get(3), row.get(4), row.get(5));//change this
+                System.out.printf("%s, %s, %s, %s, %s, %s", row.get(0) + " Type", row.get(1) + " Des", row.get(2) + " Date", row.get(3) + " Start", row.get(4) + " End", row.get(5) + " Finished");//change this
             }
         }
     }
