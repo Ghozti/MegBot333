@@ -22,6 +22,7 @@ public class EventNotifier implements MessageCreateListener {
         String type = "", description = "", date = "", start = "", end = "", finished = "";
 
         if (event.getMessageContent().equals("!meg -get events".toLowerCase())){
+            event.getChannel().sendMessage("Here are the events for the month:");
             try {
 
                 String[] data;
@@ -55,6 +56,7 @@ public class EventNotifier implements MessageCreateListener {
                 }
             } catch (IOException | GeneralSecurityException e) {
                 e.printStackTrace();
+                event.getChannel().sendMessage("Uh oh something happened that shouldn't have happened, maybe Ghozti should fix me");
             }
         }
     }
