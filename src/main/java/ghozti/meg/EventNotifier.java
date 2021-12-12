@@ -60,10 +60,9 @@ public class EventNotifier implements MessageCreateListener {
     }
 
     private boolean areDatesClose(String date1, String date2){//date 1 being the data date, date 2 being the current date
-        System.out.println(date1.substring(0,2));
-        System.out.println(date2.substring(0,2));
-        System.out.println("*");
-        if (date1.substring(0,2).equals(date2.substring(0,2))){
+        //System.out.println(date1.substring(0,3).trim());
+        //System.out.println(date2.substring(0,3).trim());
+        if (date1.substring(0,3).trim().equals(date2.substring(0,2).trim())){
             return true;
         }
         return false;
