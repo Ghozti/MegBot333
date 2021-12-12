@@ -68,7 +68,7 @@ public class DataBaseMainMain {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         final String spreadsheetId = "1QrAgHIIXrB1dsA-Pqx_UlW6vF_yZsA-URlOqhtG3zvc";
-        final String range = "A:F";//change this
+        final String range = "A2:F";//change this
         Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();

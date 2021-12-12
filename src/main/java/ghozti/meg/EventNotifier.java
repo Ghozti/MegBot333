@@ -9,6 +9,8 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.EventListener;
 import java.util.Locale;
 
@@ -22,7 +24,7 @@ public class EventNotifier implements MessageCreateListener {
         if (event.getMessageContent().equals("!meg -get events".toLowerCase())){
             try {
 
-                String[] data = new String[]{};
+                String[] data;
 
                 for (String i : DataBaseMainMain.getSheetData()){
                     data = i.split(",");
@@ -35,19 +37,35 @@ public class EventNotifier implements MessageCreateListener {
                         else if (s.endsWith(" Finished")) finished = s.substring(0,s.length()-8);
                     }
 
-                    EmbedBuilder embed = new EmbedBuilder()
-                            .setTitle(type)
-                            .setDescription(description)
-                            .setAuthor("Meg 333")
-                            .addInlineField("Date", date)
-                            .addInlineField("Time Interval: ", start + " - " + end)
-                            .addInlineField("Is done", finished)
-                            .setColor(Color.BLUE);
-                    event.getChannel().sendMessage(embed);
+                    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+                    Date jDate = new Date();
+                    String sDate = formatter.format(jDate);
+
+                    if (areDatesClose(date,sDate)) {
+                        EmbedBuilder embed = new EmbedBuilder()
+                                .setTitle(type)
+                                .setDescription(description)
+                                .setAuthor("Meg 333", "http://google.com/", "https://cdn.discordapp.com/attachments/915970934215688235/919369442759172136/frc333-8.png")
+                                .addInlineField("Date:", date)
+                                .addInlineField("Duration: ", start + " - " + end)
+                                .addInlineField("Is done:", finished)
+                                .setColor(Color.BLUE);
+                        event.getChannel().sendMessage(embed);
+                    }
                 }
             } catch (IOException | GeneralSecurityException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    private boolean areDatesClose(String date1, String date2){//date 1 being the data date, date 2 being the current date
+        System.out.println(date1.substring(0,2));
+        System.out.println(date2.substring(0,2));
+        System.out.println("*");
+        if (date1.substring(0,2).equals(date2.substring(0,2))){
+            return true;
+        }
+        return false;
     }
 }
