@@ -12,5 +12,6 @@ public class Main {
     public static void main(String[] args) throws GeneralSecurityException, IOException {
         DiscordApi api = new DiscordApiBuilder().setToken(Token.token).login().join();
         api.addMessageCreateListener(new EventNotifier());
+        api.addServerMemberJoinListener(new MemberJoinEvent());
     }
 }
