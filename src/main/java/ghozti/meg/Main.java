@@ -13,5 +13,6 @@ public class Main {
         DiscordApi api = new DiscordApiBuilder().setToken(Token.token).login().join();
         api.addMessageCreateListener(new EventNotifier());
         api.addServerMemberJoinListener(new MemberJoinEvent());
+        api.addServerMemberJoinListener(new MemberJoinEvent());
     }
 }
