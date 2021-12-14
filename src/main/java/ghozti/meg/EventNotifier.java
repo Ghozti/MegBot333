@@ -27,7 +27,7 @@ public class EventNotifier implements MessageCreateListener {
 
                 String[] data;
 
-                for (String i : DataBaseMainMain.getSheetData()){
+                for (String i : DataBaseMainMain.getEventSheetData()){
                     data = i.split(",");
                     for (String s : data){
                         if (s.endsWith(" Type")) type = s.substring(0,s.length()-4);

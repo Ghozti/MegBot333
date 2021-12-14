@@ -64,7 +64,7 @@ public class DataBaseMainMain {
      * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
      */
 
-    public static ArrayList<String> getSheetData()throws IOException, GeneralSecurityException {
+    public static ArrayList<String> getEventSheetData()throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         final String spreadsheetId = "1QrAgHIIXrB1dsA-Pqx_UlW6vF_yZsA-URlOqhtG3zvc";
