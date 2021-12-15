@@ -25,7 +25,6 @@ public class CandyCartelNotifier implements MessageCreateListener {
 
                 String[] data;
                 ArrayList<String[]> candyData = new ArrayList<>();
-                int oooo = 0;
                 for (String i : DataBaseMainMain.getCandySheetData()){
                     data = i.split(",");
                     for (String s : data) {
@@ -36,18 +35,13 @@ public class CandyCartelNotifier implements MessageCreateListener {
                     candyData.add(new String[]{name,stock,price});
                 }
 
-                EmbedBuilder embed = new EmbedBuilder()
-                        .setTitle("Candy Cartel Data")
-                        .setDescription("this graph display the current status of candy stock and price (updated every day at the end of the day...hopefully)")
-                        .setAuthor("Meg 333", "http://google.com/", "https://cdn.discordapp.com/attachments/915970934215688235/919369442759172136/frc333-8.png")
-                        .setColor(Color.BLUE);
+                StringBuilder formattedData = new StringBuilder();
 
-                for (String[] i : candyData){
-                    embed.addInlineField("Name: ",i[0]);
-                    embed.addInlineField("Stock: ",i[1]);
-                    embed.addInlineField("Price: ",i[2]);
+                for(String[] i : candyData){
+                    formattedData.append(i[0]).append("                 ").append(i[1]).append("                ").append(i[2]).append("\n").append("--------------------------------");
                 }
-                //TODO the embeds have a char limit, fix it
+
+                event.getChannel().sendMessage(formattedData.toString());
             } catch (IOException | GeneralSecurityException e) {
                 e.printStackTrace();
                 event.getChannel().sendMessage("Uh oh something happened that shouldn't have happened, maybe Ghozti should fix me");
