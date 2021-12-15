@@ -7,6 +7,8 @@ public class CandyCartelNotifier implements MessageCreateListener {
 
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
-
+        if (event.getMessageContent().equals("!meg -get cartel stock")){
+            event.getChannel().sendMessage("Here is the candy cartel data: ");
+        }
     }
 }

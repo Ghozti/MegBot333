@@ -88,11 +88,11 @@ public class DataBaseMainMain {
         return data;
     }
 
-    public static void main(String... args) throws IOException, GeneralSecurityException {
+    public static ArrayList<String> getCandySheetData()throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        final String spreadsheetId = "1QrAgHIIXrB1dsA-Pqx_UlW6vF_yZsA-URlOqhtG3zvc";
-        final String range = "A:F";//change this
+        final String spreadsheetId = "1RpJ-xUj8PU7lK3Z7ytm8Tx0DZRNl7JRuG0qRygCgtPU";
+        final String range = "A2:C";//change this
         Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();
@@ -100,13 +100,27 @@ public class DataBaseMainMain {
                 .get(spreadsheetId, range)
                 .execute();
         List<List<Object>> values = response.getValues();
+        ArrayList<String> data = new ArrayList<>();
         if (values == null || values.isEmpty()) {
             System.out.println("No data found.");
         } else {
-            for (List row : values) {
+            for (List row : values){
                 // Print columns A and E, which correspond to indices 0 and 4.
-                System.out.printf("%s, %s, %s, %s, %s, %s", row.get(0) + " Type", row.get(1) + " Des", row.get(2) + " Date", row.get(3) + " Start", row.get(4) + " End", row.get(5) + " Finished");//change this
+                data.add(String.format("%s, %s, %s", row.get(0) + " Name", row.get(1) + " Stock", row.get(2) + " Price"));//change this
             }
+        }
+        return data;
+    }
+
+
+    public static void main(String... args) throws IOException, GeneralSecurityException {
+        System.out.println("****");
+        for (String i : getCandySheetData()) {
+            System.out.println(i);
+        }
+
+        for (String i : getEventSheetData()) {
+            System.out.println(i);
         }
     }
 }
