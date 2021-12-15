@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args) throws GeneralSecurityException, IOException {
         DiscordApi api = new DiscordApiBuilder().setAllIntents().setToken(Token.token).login().join();
         api.addMessageCreateListener(new EventNotifier());
+        api.addMessageCreateListener(new CandyCartelNotifier());
         api.addServerMemberJoinListener(new MemberJoinEvent());
     }
 }

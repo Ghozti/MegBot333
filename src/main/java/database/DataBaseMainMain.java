@@ -114,7 +114,6 @@ public class DataBaseMainMain {
 
 
     public static void main(String... args) throws IOException, GeneralSecurityException {
-        System.out.println("****");
         for (String i : getCandySheetData()) {
             System.out.println(i);
         }
