@@ -4,7 +4,6 @@ import database.DataBaseMainMain;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
-
 import java.awt.*;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -35,15 +34,18 @@ public class CandyCartelNotifier implements MessageCreateListener {
                     candyData.add(new String[]{name,stock,price});
                 }
 
-                StringBuilder formattedData = new StringBuilder();
+                EmbedBuilder embed = new EmbedBuilder()
+                        .setTitle("Title")
+                        .setDescription("Description")
+                        .setAuthor("Author Name", "http://google.com/", "https://cdn.discordapp.com/embed/avatars/0.png")
+                        .addField("A field", "Some text inside the field")
+                        .addInlineField("An inline field", "More text")
+                        .addInlineField("Another inline field", "Even more text")
+                        .setColor(Color.BLUE)
+                        .setFooter("Footer", "https://cdn.discordapp.com/embed/avatars/1.png");
+// Send the embed
+                event.getChannel().sendMessage(embed);
 
-                for(String[] i : candyData){
-                    formattedData.append(String.format("%-60s %s %10s %n", i[0], i[1], i[2]));
-                    event.getChannel().sendMessage(String.format("%-60s %s %10s %n", i[0], i[1], i[2]));
-                }
-
-                //event.getChannel().sendMessage(formattedData.toString());
-                System.out.println(formattedData);
             } catch (IOException | GeneralSecurityException e) {
                 e.printStackTrace();
                 event.getChannel().sendMessage("Uh oh something happened that shouldn't have happened, maybe Ghozti should fix me");
