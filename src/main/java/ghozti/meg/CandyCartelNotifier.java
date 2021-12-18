@@ -28,9 +28,9 @@ public class CandyCartelNotifier implements MessageCreateListener {
                 for (String i : DataBaseMainMain.getCandySheetData()){
                     data = i.split(",");
                     for (String s : data) {
-                        if (s.endsWith(" Name")) name = s.substring(0, s.length() - 4);
-                        else if (s.endsWith(" Stock")) stock = s.substring(0, s.length() - 5);
-                        else if (s.endsWith(" Price")) price = s.substring(0, s.length() - 5);
+                        if (s.endsWith(" Name")) name = s.substring(0, s.length() - 4).trim();
+                        else if (s.endsWith(" Stock")) stock = s.substring(0, s.length() - 5).trim();
+                        else if (s.endsWith(" Price")) price = s.substring(0, s.length() - 5).trim();
                     }
                     candyData.add(new String[]{name,stock,price});
                 }
@@ -38,10 +38,12 @@ public class CandyCartelNotifier implements MessageCreateListener {
                 StringBuilder formattedData = new StringBuilder();
 
                 for(String[] i : candyData){
-                    formattedData.append(i[0]).append("                 ").append(i[1]).append("                ").append(i[2]).append("\n").append("--------------------------------");
+                    formattedData.append(String.format("%-60s %s %10s %n", i[0], i[1], i[2]));
+                    event.getChannel().sendMessage(String.format("%-60s %s %10s %n", i[0], i[1], i[2]));
                 }
 
-                event.getChannel().sendMessage(formattedData.toString());
+                //event.getChannel().sendMessage(formattedData.toString());
+                System.out.println(formattedData);
             } catch (IOException | GeneralSecurityException e) {
                 e.printStackTrace();
                 event.getChannel().sendMessage("Uh oh something happened that shouldn't have happened, maybe Ghozti should fix me");
