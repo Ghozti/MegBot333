@@ -13,6 +13,7 @@ public class Main {
         DiscordApi api = new DiscordApiBuilder().setAllIntents().setToken(Token.token).login().join();
         api.addMessageCreateListener(new EventNotifier());
         api.addMessageCreateListener(new CandyCartelNotifier());
+        api.addMessageCreateListener(new CandyCartelSingleNotifier());
         api.addServerMemberJoinListener(new MemberJoinEvent());
     }
 }

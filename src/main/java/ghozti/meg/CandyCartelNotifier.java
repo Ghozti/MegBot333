@@ -4,12 +4,9 @@ import database.DataBaseMainMain;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
-import java.awt.*;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class CandyCartelNotifier implements MessageCreateListener {
 
@@ -18,7 +15,7 @@ public class CandyCartelNotifier implements MessageCreateListener {
 
         String name = "", stock = "", price = "";
 
-        if (event.getMessageContent().equals("!meg -get cartel stock")){
+        if (event.getMessageContent().equalsIgnoreCase("!meg -get cartel list")){
             event.getChannel().sendMessage("Here is the candy cartel data: ");
             try {
 

@@ -21,7 +21,7 @@ public class EventNotifier implements MessageCreateListener {
 
         String type = "", description = "", date = "", start = "", end = "", finished = "";
 
-        if (event.getMessageContent().equals("!meg -get events".toLowerCase())){
+        if (event.getMessageContent().equalsIgnoreCase("!meg -get events")){
             event.getChannel().sendMessage("Here are the events for the month:");
             try {
 
