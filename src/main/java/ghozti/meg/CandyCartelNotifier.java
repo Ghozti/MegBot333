@@ -4,6 +4,8 @@ import database.DataBaseMainMain;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
+
+import java.awt.*;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
@@ -39,10 +41,13 @@ public class CandyCartelNotifier implements MessageCreateListener {
 
                 for (int j = 0; j < finalSize; j++){
                     EmbedBuilder embed = new EmbedBuilder();
+                    embed.setColor(Color.BLUE);
                     for (int i = candyDataIndexMin; i < candyDataIndexMax; i++) {
                         if (i == 0) {
-                            embed.setAuthor("Meg 333", "http://google.com/", "https://cdn.discordapp.com/embed/avatars/0.png");
-                            embed.setDescription("Candy cartel Data");
+                            embed.setAuthor("Meg 333", "http://google.com/", "https://cdn.discordapp.com/attachments/915970934215688235/921978568051929158/frc333-8.png");
+                            embed.setDescription("Candy cartel Data             " + (j+1) + "/" + (int)finalSize);
+                        }else if (i > 0){
+                            embed.setDescription("Candy cartel Data             " + (j+1) + "/" + (int)finalSize);
                         }
 
                         embed.addInlineField("Name:", candyData.get(i)[0]);

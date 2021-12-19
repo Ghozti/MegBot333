@@ -15,6 +15,7 @@ public class Main {
         api.addMessageCreateListener(new CandyCartelNotifier());
         api.addMessageCreateListener(new CandyCartelSingleNotifier());
         api.addServerMemberJoinListener(new MemberJoinEvent());
+        api.addMessageCreateListener(new HelpMenu());
     }
 }
 

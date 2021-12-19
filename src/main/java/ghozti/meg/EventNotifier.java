@@ -46,7 +46,7 @@ public class EventNotifier implements MessageCreateListener {
                         EmbedBuilder embed = new EmbedBuilder()
                                 .setTitle(type)
                                 .setDescription(description)
-                                .setAuthor("Meg 333", "http://google.com/", "https://cdn.discordapp.com/attachments/915970934215688235/919369442759172136/frc333-8.png")
+                                .setAuthor("Meg 333", "http://google.com/", "https://cdn.discordapp.com/attachments/915970934215688235/921978568051929158/frc333-8.png")
                                 .addInlineField("Date:", date)
                                 .addInlineField("Duration: ", start + " - " + end)
                                 .addInlineField("Is done:", finished)
