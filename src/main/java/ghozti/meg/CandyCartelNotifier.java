@@ -34,17 +34,30 @@ public class CandyCartelNotifier implements MessageCreateListener {
                     candyData.add(new String[]{name,stock,price});
                 }
 
-                EmbedBuilder embed = new EmbedBuilder()
-                        .setTitle("Title")
-                        .setDescription("Description")
-                        .setAuthor("Author Name", "http://google.com/", "https://cdn.discordapp.com/embed/avatars/0.png")
-                        .addField("A field", "Some text inside the field")
-                        .addInlineField("An inline field", "More text")
-                        .addInlineField("Another inline field", "Even more text")
-                        .setColor(Color.BLUE)
-                        .setFooter("Footer", "https://cdn.discordapp.com/embed/avatars/1.png");
-// Send the embed
-                event.getChannel().sendMessage(embed);
+                int size = candyData.size()/3;
+                int remainder = candyData.size() % 3;
+                float finalSize = remainder == 0 ? size : size+1;
+                int candyDataIndexMin = 0;
+                int candyDataIndexMax = 3;
+
+                for (int j = 0; j < finalSize; j++){
+                    EmbedBuilder embed = new EmbedBuilder();
+                    for (int i = candyDataIndexMin; i < candyDataIndexMax; i++) {
+                        if (i == 0) {
+                            embed.setAuthor("Meg 333", "http://google.com/", "https://cdn.discordapp.com/embed/avatars/0.png");
+                            embed.setDescription("Candy cartel Data");
+                        }
+
+                        embed.addInlineField("Name:", candyData.get(i)[0]);
+                        embed.addInlineField("In Stock:", candyData.get(i)[1]);
+                        embed.addInlineField("Price:", candyData.get(i)[2]);
+                    }
+                    candyDataIndexMax += 3;
+                    candyDataIndexMin += 3;
+                    System.out.println(candyDataIndexMax);
+                    System.out.println(candyDataIndexMin);
+                    event.getChannel().sendMessage(embed);
+                }
 
             } catch (IOException | GeneralSecurityException e) {
                 e.printStackTrace();
