@@ -52,10 +52,13 @@ public class CandyCartelNotifier implements MessageCreateListener {
                         embed.addInlineField("In Stock:", candyData.get(i)[1]);
                         embed.addInlineField("Price:", candyData.get(i)[2]);
                     }
-                    candyDataIndexMax += 3;
-                    candyDataIndexMin += 3;
-                    System.out.println(candyDataIndexMax);
-                    System.out.println(candyDataIndexMin);
+                    if ((candyDataIndexMax + 3) > candyData.size()){
+                        candyDataIndexMax = candyData.size();
+                        candyDataIndexMin = candyData.size() - remainder;
+                    }else {
+                        candyDataIndexMax += 3;
+                        candyDataIndexMin += 3;
+                    }
                     event.getChannel().sendMessage(embed);
                 }
 
