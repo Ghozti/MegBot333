@@ -1,6 +1,6 @@
 package ghozti.meg.notifiers.events;
 
-import database.DataBaseMainMain;
+import database.DataBaseMain;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
@@ -24,7 +24,7 @@ public class EventNotifier implements MessageCreateListener {
 
                 String[] data;
 
-                for (String i : DataBaseMainMain.getEventSheetData()){
+                for (String i : DataBaseMain.getEventSheetData()){
                     data = i.split(",");
                     for (String s : data){
                         if (s.endsWith(" Type")) type = s.substring(0,s.length()-4);

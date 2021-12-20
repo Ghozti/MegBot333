@@ -20,6 +20,7 @@ public class Main {
         api.addMessageCreateListener(new CandyCartelSingleNotifier());
         api.addServerMemberJoinListener(new MemberJoinEvent());
         api.addMessageCreateListener(new HelpMenu());
+        api.updateActivity("With Dispenza's pumpkin droid");
     }
 }
 

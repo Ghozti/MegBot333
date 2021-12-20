@@ -1,6 +1,6 @@
 package ghozti.meg.notifiers.cartel;
 
-import database.DataBaseMainMain;
+import database.DataBaseMain;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
@@ -22,7 +22,7 @@ public class CandyCartelSingleNotifier implements MessageCreateListener {
                 String[] data;
                 ArrayList<String[]> candyData = new ArrayList<>();
 
-                for (String i : DataBaseMainMain.getCandySheetData()){
+                for (String i : DataBaseMain.getCandySheetData()){
                     data = i.split(",");
                     for (String s : data) {
                         if (s.endsWith(" Name")) candyName = s.substring(0, s.length() - 4).trim();
