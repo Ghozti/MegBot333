@@ -1,6 +1,10 @@
 package ghozti.meg;
 
-import database.DataBaseMainMain;
+import ghozti.meg.memberManager.MemberJoinEvent;
+import ghozti.meg.menu.HelpMenu;
+import ghozti.meg.notifiers.cartel.CandyCartelNotifier;
+import ghozti.meg.notifiers.cartel.CandyCartelSingleNotifier;
+import ghozti.meg.notifiers.events.EventNotifier;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 

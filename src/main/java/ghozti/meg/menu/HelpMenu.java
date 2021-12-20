@@ -1,4 +1,4 @@
-package ghozti.meg;
+package ghozti.meg.menu;
 
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;

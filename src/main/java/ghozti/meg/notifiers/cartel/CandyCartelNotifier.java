@@ -1,4 +1,4 @@
-package ghozti.meg;
+package ghozti.meg.notifiers.cartel;
 
 import database.DataBaseMainMain;
 import org.javacord.api.entity.message.embed.EmbedBuilder;

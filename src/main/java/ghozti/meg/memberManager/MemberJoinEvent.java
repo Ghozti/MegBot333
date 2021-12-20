@@ -1,4 +1,4 @@
-package ghozti.meg;
+package ghozti.meg.memberManager;
 
 import org.javacord.api.event.server.member.ServerMemberJoinEvent;
 import org.javacord.api.listener.server.member.ServerMemberJoinListener;

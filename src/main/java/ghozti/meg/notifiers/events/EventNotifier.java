@@ -1,4 +1,4 @@
-package ghozti.meg;
+package ghozti.meg.notifiers.events;
 
 import database.DataBaseMainMain;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
@@ -6,16 +6,13 @@ import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.EventListener;
-import java.util.Locale;
 
 public class EventNotifier implements MessageCreateListener {
-    //todo handle formated data
+
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
 
@@ -62,8 +59,6 @@ public class EventNotifier implements MessageCreateListener {
     }
 
     private boolean areDatesClose(String date1, String date2){//date 1 being the data date, date 2 being the current date
-        //System.out.println(date1.substring(0,3).trim());
-        //System.out.println(date2.substring(0,3).trim());
         if (date1.substring(0,3).trim().equals(date2.substring(0,2).trim())){
             return true;
         }
