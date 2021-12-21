@@ -5,6 +5,7 @@ import ghozti.meg.menu.HelpMenu;
 import ghozti.meg.notifiers.cartel.CandyCartelNotifier;
 import ghozti.meg.notifiers.cartel.CandyCartelSingleNotifier;
 import ghozti.meg.notifiers.events.EventNotifier;
+import ghozti.meg.notifiers.extras.CurrentReleaseNotifier;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 
@@ -20,6 +21,7 @@ public class Main {
         api.addMessageCreateListener(new CandyCartelSingleNotifier());
         api.addServerMemberJoinListener(new MemberJoinEvent());
         api.addMessageCreateListener(new HelpMenu());
+        api.addMessageCreateListener(new CurrentReleaseNotifier());
         api.updateActivity("With Dispenza's pumpkin droid");
     }
 }
