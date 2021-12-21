@@ -4,7 +4,7 @@ apply plugin: 'application'
 mainClassName = 'Main.java'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-version = '1.0'
+version = '0.1.0'
 
 application {
     mainClass = 'ghozti.meg.Main'
