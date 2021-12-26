@@ -1,5 +1,6 @@
 package ghozti.meg;
 
+import ghozti.meg.calc.CalcListener;
 import ghozti.meg.memberManager.MemberJoinEvent;
 import ghozti.meg.menu.HelpMenu;
 import ghozti.meg.notifiers.cartel.CandyCartelNotifier;
@@ -22,6 +23,7 @@ public class Main {
         api.addServerMemberJoinListener(new MemberJoinEvent());
         api.addMessageCreateListener(new HelpMenu());
         api.addMessageCreateListener(new CurrentReleaseNotifier());
+        api.addMessageCreateListener(new CalcListener());
         api.updateActivity("With Dispenza's pumpkin droid");
     }
 }
