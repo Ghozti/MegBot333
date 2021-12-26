@@ -4,22 +4,22 @@ public class Calculator {
 
     //the calculator utilty class
 
-    private static boolean isListEmpty(float[] nums){return nums.length == 0;}
+    private static boolean isListEmpty(double[] nums){return nums.length == 0;}
 
-    public static float add(float[] nums){
+    public static double add(double[] nums){
         if (isListEmpty(nums)) return 0;
-        float sum = 0;
-        for (float i : nums) {
+        double sum = 0;
+        for (double i : nums) {
             sum += i;
         }
         return sum;
     }
 
-    public static float sub(float[] nums){
+    public static double sub(double[] nums){
         if (isListEmpty(nums)) return 0;
-        float remainder = nums[1];
+        double remainder = nums[1];
         int runs = 1;
-        for (float i : nums) {
+        for (double i : nums) {
             if (runs > 1){
                 remainder -= i;
             }
@@ -28,11 +28,11 @@ public class Calculator {
         return remainder;
     }
 
-    public static float mul(float[] nums){
+    public static double mul(double[] nums){
         if (isListEmpty(nums)) return 0;
-        float product = nums[0];
+        double product = nums[0];
         int runs = 1;
-        for (float i : nums) {
+        for (double i : nums) {
             if (runs > 1){
                 product *= i;
             }
@@ -41,12 +41,12 @@ public class Calculator {
         return product;
     }
 
-    public static float div(float[] nums){
+    public static double div(double[] nums){
         if (isListEmpty(nums)) return 0;
-        float quotient = nums[0];
+        double quotient = nums[0];
         int runs = 1;
         try {
-            for (float i : nums) {
+            for (double i : nums) {
                 if (runs > 1) {
                     quotient /= i;
                 }
