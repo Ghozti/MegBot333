@@ -57,4 +57,12 @@ public class Calculator {
         }
         return quotient;
     }
+
+    public static double pow(double normalNum,double[] nums){
+        double total = normalNum;
+        for (double i : nums) {
+            total = Math.pow(total, i);
+        }
+        return total;
+    }
 }
