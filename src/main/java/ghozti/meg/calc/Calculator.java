@@ -18,7 +18,7 @@ public class Calculator {
     public static double sub(double[] nums){
         if (isListEmpty(nums)) return 0;
         double remainder = nums[1];
-        int runs = 1;
+        int runs = 0;
         for (double i : nums) {
             if (runs > 1){
                 remainder -= i;
@@ -31,9 +31,9 @@ public class Calculator {
     public static double mul(double[] nums){
         if (isListEmpty(nums)) return 0;
         double product = nums[0];
-        int runs = 1;
+        int runs = 0;
         for (double i : nums) {
-            if (runs > 1){
+            if (runs > 0){
                 product *= i;
             }
             runs++;
@@ -44,10 +44,10 @@ public class Calculator {
     public static double div(double[] nums){
         if (isListEmpty(nums)) return 0;
         double quotient = nums[0];
-        int runs = 1;
+        int runs = 0;
         try {
             for (double i : nums) {
-                if (runs > 1) {
+                if (runs > 0) {
                     quotient /= i;
                 }
                 runs++;
